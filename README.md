@@ -28,7 +28,7 @@ Currently Unavailable
 
 ## Getting Started
 
-```
+```python
 from cvp.splits import Split
 from cvp.metrics import RegressionMetric
 from cvp.model_pipeline import Pipeline
