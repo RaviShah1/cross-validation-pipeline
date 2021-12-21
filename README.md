@@ -16,6 +16,11 @@ Cross Validation Pipeline (cvp) is a future open source python library. CVP is a
     <td>cvp.splits</td>
     <td>Splits a dataset using any type of cross validation framework (e.g. kfold, holdout, etc.)</td>
   </tr>
+  <tr>
+    <td>cvp.model_pipeline</td>
+    <td>Applies a full cross validation pipeline to a fit_predict type machine learning model</td>
+  </tr>
+</table>
 
 ## Installation
 
