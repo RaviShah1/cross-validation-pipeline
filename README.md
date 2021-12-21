@@ -31,7 +31,7 @@ Currently Unavailable
 To Be Completed
 
 ## Resources
-- [Documentation]()
+- [Documentation](https://github.com/RaviShah1/cross-validation-pipeline/blob/main/README.md)
 
 ## Sources
 
@@ -39,12 +39,3 @@ I took inspiration from the following:
 - https://github.com/abhishekkrthakur/mlframework
 - https://github.com/gtsherman/cross-validation
 
-## Citation
-
-@article{RaviShah1,
-  title={Caer},
-  author={Shah, Ravi},
-  journal={GitHub. Note: https://github.com/RaviShah1},
-  volume={1},
-  year={2022}
-}
