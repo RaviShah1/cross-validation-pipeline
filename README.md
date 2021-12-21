@@ -28,6 +28,7 @@ Currently Unavailable
 
 ## Getting Started
 
+```
 from cvp.splits import Split
 from cvp.metrics import RegressionMetric
 from cvp.model_pipeline import Pipeline
@@ -44,6 +45,7 @@ model = XGBClassifier()
 
 pipeline = Pipeline(data, X, y, model, splitter, metric, False, '/saved_models')
 results = pipeline.run()
+```
 
 ## Resources
 - [Documentation](https://github.com/RaviShah1/cross-validation-pipeline/blob/main/README.md)
