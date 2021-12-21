@@ -28,7 +28,22 @@ Currently Unavailable
 
 ## Getting Started
 
-To Be Completed
+from cvp.splits import Split
+from cvp.metrics import RegressionMetric
+from cvp.model_pipeline import Pipeline
+from xgboost import XGBClassifier
+import pandas as pd
+
+data = pd.read_csv("../input.csv")
+X = ['feature1', 'feature2', 'feature3']
+y = 'label'
+
+splitter = Split(data, X, y, 5, 'skf')
+metric = RegressionMetric('rmse')
+model = XGBClassifier()
+
+pipeline = Pipeline(data, X, y, model, splitter, metric, False, '/saved_models')
+results = pipeline.run()
 
 ## Resources
 - [Documentation](https://github.com/RaviShah1/cross-validation-pipeline/blob/main/README.md)
