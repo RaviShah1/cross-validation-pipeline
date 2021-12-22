@@ -32,16 +32,16 @@ Currently Unavailable
 from cvp.splits import Split
 from cvp.metrics import RegressionMetric
 from cvp.model_pipeline import Pipeline
-from xgboost import XGBClassifier
+from xgboost import XGBRegressor
 import pandas as pd
 
-data = pd.read_csv("../input/train.csv")
+data = pd.read_csv("../input.csv")
 X = ['feature1', 'feature2', 'feature3']
 y = 'label'
 
 splitter = Split(data, X, y, 5, 'skf')
 metric = RegressionMetric('rmse')
-model = XGBClassifier()
+model = XGBRegressor()
 
 pipeline = Pipeline(data, X, y, model, splitter, metric, False, 'xgb', '/saved_models')
 results = pipeline.run()
