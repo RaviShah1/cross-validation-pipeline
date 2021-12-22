@@ -53,6 +53,8 @@ class ClassificationMetric(Metric):
             return skmetrics.recall_score(y_true=y_true, y_pred=y_pred)
         elif self.name == 'auc':
             return skmetrics.roc_auc_score(y_true=y_true, y_score=y_pred)
+        elif self.name == 'auc_multi':
+            return skmetrics.roc_auc_score(y_true=y_true, y_score=y_pred, multi_class='ovr')
         elif self.name == 'logloss':
             return skmetrics.log_loss(y_true=y_true, y_pred=y_pred)
         else:
