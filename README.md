@@ -35,7 +35,7 @@ from cvp.model_pipeline import Pipeline
 from xgboost import XGBClassifier
 import pandas as pd
 
-data = pd.read_csv("../input.csv")
+data = pd.read_csv("../input/train.csv")
 X = ['feature1', 'feature2', 'feature3']
 y = 'label'
 
