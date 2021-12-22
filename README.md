@@ -41,7 +41,7 @@ y = 'label'
 
 splitter = Split(data, X, y, 5, 'skf')
 metric = RegressionMetric('rmse')
-model = XGBClassifier()
+model = XGBClassifier() # any model
 
 pipeline = Pipeline(data, X, y, model, splitter, metric, False, '/saved_models')
 results = pipeline.run()
