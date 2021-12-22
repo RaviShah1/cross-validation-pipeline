@@ -50,9 +50,3 @@ results = pipeline.run()
 ## Resources
 - [Documentation](https://github.com/RaviShah1/cross-validation-pipeline/blob/main/README.md)
 
-## Sources
-
-I took inspiration from the following:
-- https://github.com/abhishekkrthakur/mlframework
-- https://github.com/gtsherman/cross-validation
-
