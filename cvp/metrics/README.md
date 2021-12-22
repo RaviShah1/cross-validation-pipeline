@@ -1,5 +1,7 @@
 # Metrics Documentation
 
+This is a wrapper for the sklearn metrics module.
+
 ## Classification Options
 
 ```python
@@ -36,6 +38,41 @@ metric(y_true, y_pred)
   <tr>
     <td>logloss</td>
     <td>returns the log loss score</td>
+  </tr>
+  </table>
+
+## Regression Options
+
+```python
+from cvp.metrics import RegressionMetric
+metric = RegressionMetric('rmse') # the parameter can be any option from the table below
+metric(y_true, y_pred)
+```
+
+<table>
+  <tr>
+    <td>mae</td>
+    <td>returns the mean absolute error</td>
+  </tr>
+  <tr>
+    <td>mse</td>
+    <td>returns the mean squared</td>
+  </tr>
+  <tr>
+    <td>rmse</td>
+    <td>returns the root mean squared error</td>
+  </tr>
+  <tr>
+    <td>msle</td>
+    <td>returns the mean squared log loss</td>
+  </tr>
+  <tr>
+    <td>rmsle</td>
+    <td>returns the root mean squared log loss</td>
+  </tr>
+  <tr>
+    <td>r2</td>
+    <td>returns the r2 score</td>
   </tr>
   </table>
 
