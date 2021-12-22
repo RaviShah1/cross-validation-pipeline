@@ -18,7 +18,8 @@ class Pipeline:
                  metric: Metric,
                  proba: bool,
                  model_name: str,
-                 save_dir: str):
+                 save_dir: str,
+                 verbose: bool=True):
         """
         Creates a cross validation pipeline
 
@@ -42,6 +43,8 @@ class Pipeline:
             name of the model
         save_dir : str
             where to save the models
+        verbose : bool
+            whether of not to print extra information
         """
         self.df = data
         self.X = X
@@ -52,6 +55,7 @@ class Pipeline:
         self.proba = proba
         self.model_name = model_name
         self.save_dir = save_dir
+        self.verbose = verbose
 
     def run(self) -> dict:
         """
@@ -63,10 +67,19 @@ class Pipeline:
         self.holdout = self.splitter.holdout
 
         # Check if holdout
+        results = None
         if self.holdout:
-            return self._train_holdout()
+            results = self._train_holdout()
+        else:
+            results = self._train()
 
-        return self._train()
+        if self.verbose and self.holdout:
+            print('score', results['score'])
+        if self.verbose and not self.holdout:
+            print('avg score', results['avg_score'])
+            print('fold scores', results['scores'])
+
+        return results
 
     def _train_holdout(self) -> dict:
         # Assign Variables
@@ -85,9 +98,10 @@ class Pipeline:
         # Caclulate Out Of Sample Predictions
         y_pred = None
         if self.proba:
-            y_pred = model.predict_proba()
+            y_pred = model.predict_proba(X_test)
         else:
             y_pred = model.predict(X_test)
+
         score = self.metric(y_test, y_pred)
 
         # Save
@@ -126,7 +140,7 @@ class Pipeline:
             # Caclulate Out Of Sample Predictions
             y_pred = None
             if self.proba:
-                y_pred = model.predict_proba()
+                y_pred = model.predict_proba(X_test)
             else:
                 y_pred = model.predict(X_test)
             score = self.metric(y_test, y_pred)
