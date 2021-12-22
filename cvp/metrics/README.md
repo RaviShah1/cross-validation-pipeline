@@ -37,5 +37,5 @@ metric(y_true, y_pred)
     <td>logloss</td>
     <td>returns the log loss score</td>
   </tr>
-<\table>
+  </table>
 
