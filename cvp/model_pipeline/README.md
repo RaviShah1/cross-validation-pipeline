@@ -1,6 +1,7 @@
 # Model Pipeline Documentation
 
 ## Example
+Here is an example of training 3 folds of the Iris Dataset:
 ```python
 from cvp.splits import Split
 from cvp.metrics import ClassificationMetric
