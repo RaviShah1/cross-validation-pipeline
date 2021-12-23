@@ -85,11 +85,14 @@ from cvp.metrics import Metric
 
 class MyMetric(Metric):
     def __init__(self, name: str):
-        self.name = name
+        self.name = name # the name itself is not important
 
     def __call__(self):
         return self._compute()
 
     def _compute(self):
         return # write your metric here
+        
+metric = MyMetric('metric_name')
+metric(y_true, y_pred)
 ```
