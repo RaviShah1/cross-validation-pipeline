@@ -76,3 +76,20 @@ metric(y_true, y_pred)
   </tr>
   </table>
 
+## Adding a new Metric
+
+Using a metric thats not in the API? Use the Metric interface!
+
+```python
+from cvp.metrics import Metric
+
+class MyMetric(Metric):
+    def __init__(self, name: str):
+        self.name = name
+
+    def __call__(self):
+        return self._compute()
+
+    def _compute(self):
+        return # write your metric here
+```
