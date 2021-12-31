@@ -7,6 +7,7 @@ This contains a class to split your data into folds for cross validation.
 ```python
 from cvp.splits import Split
 splitter = Split(data, ['f1', 'f2', 'f3'], 'label', 3, 'gkf', 'group')
+splitter.split()
 ```
 
 Split Parameters:
@@ -63,3 +64,31 @@ Split Parameters:
     <td>the random state seed</td>
   </tr>
   </table>
+
+## K-Fold
+
+```python
+splitter = Split(data, ['f1', 'f2', 'f3'], 'label', 3)
+splitter.split()
+```
+
+## Stratified K-Fold
+
+```python
+splitter = Split(data, ['f1', 'f2', 'f3'], 'label', 3, 'skf')
+splitter.split()
+```
+
+## Group K-Fold
+
+```python
+splitter = Split(data, ['f1', 'f2', 'f3'], 'label', 3, 'gkf', 'group')
+splitter.split()
+```
+
+## Holdout
+
+```python
+splitter = Split(data, ['f1', 'f2', 'f3'], 'label', 3, holdout=True, holdout_fold=0)
+splitter.split()
+```
