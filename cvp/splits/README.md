@@ -6,7 +6,7 @@ This contains a class to split your data into folds for cross validation.
 
 ```python
 from cvp.splits import Split
-splitter = Split(data, ['f1', 'f2', 'f3'], 'label', 3, 'gkf', 'group')
+splitter = Split(data, ['f1', 'f2', 'f3'], 'label')
 splitter.split()
 ```
 
