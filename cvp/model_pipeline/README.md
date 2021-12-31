@@ -26,3 +26,10 @@ model = XGBClassifier()
 pipeline = Pipeline(data, X, y, model, splitter, metric, False, 'xgb', '.')
 results = pipeline.run()
 ```
+Here is an example of making a prediction:
+```python
+test = pd.read_csv('test.csv')
+X = ['f1', 'f2', 'f3', 'f4']
+predictor = Predictor(results, 'mode')
+outputs = predictor.predict(test, X)
+```
