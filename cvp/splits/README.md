@@ -68,27 +68,27 @@ Split Parameters:
 ## K-Fold
 
 ```python
-splitter = Split(data, ['f1', 'f2', 'f3'], 'label', 3)
+splitter = Split(data, ['f1', 'f2', 'f3'], 'label', 5)
 splitter.split()
 ```
 
 ## Stratified K-Fold
 
 ```python
-splitter = Split(data, ['f1', 'f2', 'f3'], 'label', 3, 'skf')
+splitter = Split(data, ['f1', 'f2', 'f3'], 'label', 5, 'skf')
 splitter.split()
 ```
 
 ## Group K-Fold
 
 ```python
-splitter = Split(data, ['f1', 'f2', 'f3'], 'label', 3, 'gkf', 'group')
+splitter = Split(data, ['f1', 'f2', 'f3'], 'label', 5, 'gkf', 'group')
 splitter.split()
 ```
 
 ## Holdout
 
 ```python
-splitter = Split(data, ['f1', 'f2', 'f3'], 'label', 3, holdout=True, holdout_fold=0)
+splitter = Split(data, ['f1', 'f2', 'f3'], 'label', 5, holdout=True, holdout_fold=0)
 splitter.split()
 ```
